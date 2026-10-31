@@ -6,6 +6,54 @@ Asistente conversacional basado en inteligencia artificial generativa que ayuda 
 
 Es una herramienta de apoyo al análisis, no un asesor financiero: no ofrece recomendaciones de inversión.
 
+## Estructura del proyecto
+pj-asistente-accionista/
+├── .github/
+│   └── workflows/
+│       └── test_and_build.yml
+├── data/
+├── deployment/
+│   └── Dockerfile
+├── docs/
+│   └── http-contracts.md
+├── src/
+│   └── asistente_accionista/
+│       ├── __init__.py
+│       ├── main.py
+│       └── models.py
+├── tests/
+│   ├── test_api.py
+│   └── test_models.py
+├── requirements.txt
+└── README.md
+
+## Código de la aplicación
+
+- El paquete de la aplicación estará en `src/asistente_accionista/`.
+- `models.py` contendrá los modelos de Pydantic, incluidos `AskRequest` y `AskResponse`.
+- `main.py` contendrá la aplicación FastAPI y el endpoint `POST /ask`.
+- `__init__.py` permitirá importar el código como el paquete `asistente_accionista`.
+
+## Tests
+
+- `tests/test_models.py` contendrá los tests unitarios de los modelos Pydantic.
+- `tests/test_api.py` contendrá los tests de integración del endpoint usando `TestClient` de FastAPI.
+- HTTPX debe estar incluido entre las dependencias necesarias para usar `TestClient`.
+- La suite se ejecutará desde la raíz del proyecto con:
+
+  ```bash
+  python -m pytest tests/
+  ```
+
+## Dependencias
+
+`requirements.txt`, en la raíz, contendrá las dependencias necesarias para la aplicación y para ejecutar los tests. El workflow ya lo instala desde esa ubicación.
+
+## Docker
+
+- El Dockerfile estará en `deployment/Dockerfile`.
+- Como la aplicación vive en `src/` y las dependencias en la raíz, el contexto de construcción de Docker debe ser la raíz del repositorio (`.`). El workflow debe apuntar al Dockerfile con la ruta `deployment/Dockerfile`.
+
 ## Puesta en marcha en local
 
 ## Funcionalidades previstas
