@@ -7,6 +7,7 @@ Asistente conversacional basado en inteligencia artificial generativa que ayuda 
 Es una herramienta de apoyo al análisis, no un asesor financiero: no ofrece recomendaciones de inversión.
 
 ## Estructura del proyecto
+```text
 pj-asistente-accionista/
 ├── .github/
 │   └── workflows/
@@ -26,6 +27,7 @@ pj-asistente-accionista/
 │   └── test_models.py
 ├── requirements.txt
 └── README.md
+```
 
 ## Código de la aplicación
 
