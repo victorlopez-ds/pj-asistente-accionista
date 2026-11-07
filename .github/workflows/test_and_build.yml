@@ -52,4 +52,4 @@ jobs:
           file: ./deployment/Dockerfile
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_REPO }}/asistente_accionista:latest
+            asistente_accionista:latest
