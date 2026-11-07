@@ -4,9 +4,9 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 #AskRequest
 class AskRequest(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True,
-                             json_schema_extra={
+                             json_schema_extra={"example": {
                                   "input": "¿Cuáles fueron los principales motivos del crecimiento de Apple en el tercer trimestre de 2026?"
-                             })
+                             }})
     input: str = Field(
         ...,
         min_length=1,
