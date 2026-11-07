@@ -3,7 +3,7 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 #AskRequest
 class AskRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True,
                              json_schema_extra={
                                   "input": "¿Cuáles fueron los principales motivos del crecimiento de Apple en el tercer trimestre de 2026?"
                              })
