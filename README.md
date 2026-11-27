@@ -45,6 +45,8 @@ pj-asistente-accionista/
 
 El asistente utiliza la API de Groq para generar respuestas mediante un modelo de lenguaje.
 
+El modelo predeterminado es `openai/gpt-oss-120b` y puede configurarse mediante la variable de entorno `GROQ_MODEL`.
+
 El endpoint `POST /ask` recibe una pregunta, valida los datos mediante Pydantic, solicita una respuesta al proveedor LLM y devuelve el resultado en formato JSON.
 
 La integración contempla:

@@ -14,7 +14,7 @@ def generate_response(question: str) -> str:
 
     response = client.chat.completions.create(
         model=os.getenv(
-            "GROQ_MODEL", "llama-3.3-70b-versatile"
+            "GROQ_MODEL", "openai/gpt-oss-120b"
         ),
         messages=[
             {
