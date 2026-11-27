@@ -3,3 +3,4 @@ uvicorn[standard]
 pydantic
 pytest
 httpx
+gradio>=6.0,<7.0
